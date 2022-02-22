@@ -27,7 +27,7 @@
 		EEE703DC16F089FE002FDD69 /* NJHIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE703DB16F089FE002FDD69 /* NJHIDManager.m */; };
 		EEE703DE16F0B3F6002FDD69 /* NJInputPathElement.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE703DD16F0B3F6002FDD69 /* NJInputPathElement.m */; };
 		EEE73B1616EA42E5009D9D99 /* NSRunningApplication+NJPossibleNames.m in Sources */ = {isa = PBXBuildFile; fileRef = EEE73B1516EA42E5009D9D99 /* NSRunningApplication+NJPossibleNames.m */; };
-		EEF17D1916E8E21A00D7DC4D /* com.yukkurigames.Enjoyable.mapping.icns in Resources */ = {isa = PBXBuildFile; fileRef = EEF17D1716E8E21A00D7DC4D /* com.yukkurigames.Enjoyable.mapping.icns */; };
+		EEF17D1916E8E21A00D7DC4D /* com.yukkurigames.Enjoyable 2.mapping.icns in Resources */ = {isa = PBXBuildFile; fileRef = EEF17D1716E8E21A00D7DC4D /* com.yukkurigames.Enjoyable 2.mapping.icns */; };
 		EEF17D1F16E8E23A00D7DC4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EEF17D1B16E8E23A00D7DC4D /* InfoPlist.strings */; };
 		EEF17D2016E8E23A00D7DC4D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEF17D1D16E8E23A00D7DC4D /* MainMenu.xib */; };
 		EEF17D2216E8E24400D7DC4D /* Help in Resources */ = {isa = PBXBuildFile; fileRef = EEF17D2116E8E24400D7DC4D /* Help */; };
@@ -82,7 +82,7 @@
 		4CF2B60927C4C34D00E22800 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		4CF2B60B27C4C38D00E22800 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* Enjoyable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Enjoyable.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107320486CEB800E47090 /* Enjoyable 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Enjoyable 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D594BEFF0FAE7397007A85F2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		EE35A6E317BBCC9500413995 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		EE3D897916EA7EFC00596D1F /* Status Menu Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Status Menu Icon@2x.png"; path = "Resources/Status Menu Icon@2x.png"; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		EEE703DD16F0B3F6002FDD69 /* NJInputPathElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NJInputPathElement.m; path = Classes/NJInputPathElement.m; sourceTree = "<group>"; };
 		EEE73B1416EA42E5009D9D99 /* NSRunningApplication+NJPossibleNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSRunningApplication+NJPossibleNames.h"; path = "Categories/NSRunningApplication+NJPossibleNames.h"; sourceTree = "<group>"; };
 		EEE73B1516EA42E5009D9D99 /* NSRunningApplication+NJPossibleNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSRunningApplication+NJPossibleNames.m"; path = "Categories/NSRunningApplication+NJPossibleNames.m"; sourceTree = "<group>"; };
-		EEF17D1716E8E21A00D7DC4D /* com.yukkurigames.Enjoyable.mapping.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = com.yukkurigames.Enjoyable.mapping.icns; path = Resources/com.yukkurigames.Enjoyable.mapping.icns; sourceTree = "<group>"; };
+		EEF17D1716E8E21A00D7DC4D /* com.yukkurigames.Enjoyable 2.mapping.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "com.yukkurigames.Enjoyable 2.mapping.icns"; path = "Resources/com.yukkurigames.Enjoyable 2.mapping.icns"; sourceTree = "<group>"; };
 		EEF17D2116E8E24400D7DC4D /* Help */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Help; path = Resources/Help; sourceTree = "<group>"; };
 		EEF17D2316E8E2D800D7DC4D /* Enjoyable_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enjoyable_Prefix.pch; path = "Other Sources/Enjoyable_Prefix.pch"; sourceTree = "<group>"; };
 		EEF17D2416E8E2D800D7DC4D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Other Sources/main.m"; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* Enjoyable.app */,
+				8D1107320486CEB800E47090 /* Enjoyable 2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 				EE1F3CE816EF4182008C6426 /* Localizable.strings */,
 				EEF17D1B16E8E23A00D7DC4D /* InfoPlist.strings */,
 				EEF17D1D16E8E23A00D7DC4D /* MainMenu.xib */,
-				EEF17D1716E8E21A00D7DC4D /* com.yukkurigames.Enjoyable.mapping.icns */,
+				EEF17D1716E8E21A00D7DC4D /* com.yukkurigames.Enjoyable 2.mapping.icns */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -365,9 +365,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* Enjoyable */ = {
+		8D1107260486CEB800E47090 /* Enjoyable 2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Enjoyable" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Enjoyable 2" */;
 			buildPhases = (
 				EE3D898416EAAE1600596D1F /* Increment build number */,
 				EED7E81616E7B547004A0BA4 /* Generate Help Index */,
@@ -380,10 +380,10 @@
 			);
 			dependencies = (
 			);
-			name = Enjoyable;
+			name = "Enjoyable 2";
 			productInstallPath = "$(HOME)/Applications";
 			productName = Enjoy;
-			productReference = 8D1107320486CEB800E47090 /* Enjoyable.app */;
+			productReference = 8D1107320486CEB800E47090 /* Enjoyable 2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -394,7 +394,7 @@
 			attributes = {
 				LastUpgradeCheck = 1320;
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Enjoyable" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Enjoyable 2" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 1;
@@ -409,7 +409,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* Enjoyable */,
+				8D1107260486CEB800E47090 /* Enjoyable 2 */,
 			);
 		};
 /* End PBXProject section */
@@ -419,7 +419,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEF17D1916E8E21A00D7DC4D /* com.yukkurigames.Enjoyable.mapping.icns in Resources */,
+				EEF17D1916E8E21A00D7DC4D /* com.yukkurigames.Enjoyable 2.mapping.icns in Resources */,
 				EEF17D1F16E8E23A00D7DC4D /* InfoPlist.strings in Resources */,
 				EEF17D2016E8E23A00D7DC4D /* MainMenu.xib in Resources */,
 				EEF17D2216E8E24400D7DC4D /* Help in Resources */,
@@ -543,9 +543,9 @@
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.5;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yukkurigames.${PRODUCT_NAME:identifier}";
-				PRODUCT_NAME = Enjoyable;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yukkurigames.Enjoyable-2";
+				PRODUCT_NAME = "Enjoyable 2";
 			};
 			name = Debug;
 		};
@@ -558,9 +558,9 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 1.5;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yukkurigames.${PRODUCT_NAME:identifier}";
-				PRODUCT_NAME = Enjoyable;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yukkurigames.Enjoyable-2";
+				PRODUCT_NAME = "Enjoyable 2";
 			};
 			name = Release;
 		};
@@ -645,7 +645,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Enjoyable" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Enjoyable 2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
@@ -654,7 +654,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Enjoyable" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Enjoyable 2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
