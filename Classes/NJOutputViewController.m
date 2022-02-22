@@ -178,9 +178,12 @@ typedef NS_ENUM(NSUInteger, NJOutputRow) {
         case NJOutputRowNone:
             return nil;
         case NJOutputRowKey:
-            if (self.keyInput.hasKeyCode) {
+            if (self.firstKeyInput.hasKeyCode || self.secondKeyInput.hasKeyCode || self.thirdKeyInput.hasKeyCode || self.fourthKeyInput.hasKeyCode) {
                 NJOutputKeyPress *k = [[NJOutputKeyPress alloc] init];
-                k.keyCode = self.keyInput.keyCode;
+                k.firstKeyCode = self.firstKeyInput.keyCode;
+                k.secondKeyCode = self.secondKeyInput.keyCode;
+                k.thirdKeyCode = self.thirdKeyInput.keyCode;
+                k.fourthKeyCode = self.fourthKeyInput.keyCode;
                 return k;
             } else {
                 return nil;
@@ -229,7 +232,10 @@ typedef NS_ENUM(NSUInteger, NJOutputRow) {
 
 - (void)setEnabled:(BOOL)enabled {
     self.radioButtons.enabled = enabled;
-    self.keyInput.enabled = enabled;
+    self.firstKeyInput.enabled = enabled;
+    self.secondKeyInput.enabled = enabled;
+    self.thirdKeyInput.enabled = enabled;
+    self.fourthKeyInput.enabled = enabled;
     self.mappingPopup.enabled = enabled;
     self.mouseDirSelect.enabled = enabled;
     self.mouseSpeedSlider.enabled = enabled;
@@ -260,7 +266,10 @@ typedef NS_ENUM(NSUInteger, NJOutputRow) {
 
     if ([output isKindOfClass:NJOutputKeyPress.class]) {
         [self.radioButtons selectCellAtRow:NJOutputRowKey column:0];
-        self.keyInput.keyCode = [(NJOutputKeyPress*)output keyCode];
+        self.firstKeyInput.keyCode = [(NJOutputKeyPress*)output firstKeyCode];
+        self.secondKeyInput.keyCode = [(NJOutputKeyPress*)output secondKeyCode];
+        self.thirdKeyInput.keyCode = [(NJOutputKeyPress*)output thirdKeyCode];
+        self.fourthKeyInput.keyCode = [(NJOutputKeyPress*)output fourthKeyCode];
     } else if ([output isKindOfClass:NJOutputMapping.class]) {
         [self.radioButtons selectCellAtRow:NJOutputRowSwitch column:0];
         NSMenuItem *item = [self.mappingPopup itemWithIdenticalRepresentedObject:
@@ -296,9 +305,9 @@ typedef NS_ENUM(NSUInteger, NJOutputRow) {
 
 - (void)focusKey {
     if (self.radioButtons.selectedRow <= 1)
-        [self.keyInput.window makeFirstResponder:self.keyInput];
+        [self.firstKeyInput.window makeFirstResponder:self.firstKeyInput];
     else
-        [self.keyInput resignIfFirstResponder];
+        [self.firstKeyInput resignIfFirstResponder];
 }
 
 - (void)mappingListDidChange:(NSNotification *)note {

@@ -16,7 +16,10 @@
 
 @interface NJOutputViewController : NSObject <NJKeyInputFieldDelegate>
 
-@property (nonatomic, strong) IBOutlet NJKeyInputField *keyInput;
+@property (nonatomic, strong) IBOutlet NJKeyInputField *firstKeyInput;
+@property (nonatomic, strong) IBOutlet NJKeyInputField *secondKeyInput;
+@property (nonatomic, strong) IBOutlet NJKeyInputField *thirdKeyInput;
+@property (nonatomic, strong) IBOutlet NJKeyInputField *fourthKeyInput;
 @property (nonatomic, strong) IBOutlet NSMatrix *radioButtons;
 @property (nonatomic, strong) IBOutlet NSSegmentedControl *mouseDirSelect;
 @property (nonatomic, strong) IBOutlet NSSlider *mouseSpeedSlider;
