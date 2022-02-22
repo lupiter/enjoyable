@@ -121,6 +121,11 @@ objectValueForTableColumn:(NSTableColumn *)tableColumn
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification {
     NSOutlineView *outlineView = notification.object;
     NJInputPathElement *item = outlineView.selectedItem;
+    if ([item.uid isEqual:[NSUserDefaults.standardUserDefaults objectForKey:@"selected input"]]) {
+        NSLog(@"exit early");
+        return;
+    }
+    NSLog(@"Outline view selection did change %@ %@", item.uid, [NSUserDefaults.standardUserDefaults objectForKey:@"selected input"]);
     if (item) {
         [NSUserDefaults.standardUserDefaults setObject:item.uid
                                                 forKey:@"selected input"];

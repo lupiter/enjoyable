@@ -143,6 +143,8 @@
             [self performSelector:@selector(flashStatusItem)
                        withObject:self
                        afterDelay:0.2 * i];
+    
+    NSLog(@"mapping did change");
     [self loadOutputForInput:self.dvc.selectedHandler];
 }
 
@@ -372,25 +374,30 @@
 
 - (void)loadOutputForInput:(NJInput *)input {
     NJOutput *output = self.ic.currentMapping[input];
+    NSLog(@"load output (current) for input");
     [self.oc loadOutput:output forInput:input];
 }
 
 - (void)deviceViewControllerDidSelectNothing:(NJDeviceViewController *)dvc {
+    NSLog(@"did select nothing");
     [self loadOutputForInput:nil];
 }
 
 - (void)deviceViewController:(NJDeviceViewController *)dvc
              didSelectBranch:(NJInputPathElement *)handler {
+    NSLog(@"did select branch");
     [self loadOutputForInput:dvc.selectedHandler];
 }
 
 - (void)deviceViewController:(NJDeviceViewController *)dvc
             didSelectHandler:(NJInputPathElement *)handler {
+    NSLog(@"did select handler");
     [self loadOutputForInput:dvc.selectedHandler];
 }
 
 - (void)deviceViewController:(NJDeviceViewController *)dvc
              didSelectDevice:(NJInputPathElement *)device {
+    NSLog(@"did select device");
     [self loadOutputForInput:dvc.selectedHandler];
 }
 
@@ -414,6 +421,7 @@
 
 - (void)inputController:(NJInputController *)ic didInput:(NJInput *)input {
     [self.dvc expandAndSelectItem:input];
+    NSLog(@"controller did input %@", input);
     [self loadOutputForInput:input];
     [self.oc focusKey];
 }

@@ -32,7 +32,7 @@
 }
 
 - (Boolean)empty {
-    return _firstKeyCode != NJKeyInputFieldEmpty && _secondKeyCode != NJKeyInputFieldEmpty && _thirdKeyCode != NJKeyInputFieldEmpty && _fourthKeyCode != NJKeyInputFieldEmpty;
+    return _firstKeyCode != NJKeyInputFieldEmpty && _secondKeyCode != NJKeyInputFieldEmpty && _thirdKeyCode != NJKeyInputFieldEmpty && _fourthKeyCode != NJKeyInputFieldEmpty && _firstKeyCode != 0 && _secondKeyCode != 0 &&  _thirdKeyCode != 0 && _fourthKeyCode != 0;
 }
 
 - (void)trigger {
@@ -47,16 +47,16 @@
 }
 
 + (void) trigger:(CGKeyCode )key {
-    if (key != NJKeyInputFieldEmpty) {
+    if (key != NJKeyInputFieldEmpty && key != 0) {
         CGEventRef keyDown = CGEventCreateKeyboardEvent(NULL, key, YES);
         CGEventPost(kCGHIDEventTap, keyDown);
-        NSLog(@"event keydown sent");
+        NSLog(@"event keydown sent %d", key);
         CFRelease(keyDown);
     }
 }
 
 + (void) untrigger:(CGKeyCode )key {
-    if (key != NJKeyInputFieldEmpty) {
+    if (key != NJKeyInputFieldEmpty && key != 0) {
         CGEventRef keyUp = CGEventCreateKeyboardEvent(NULL, key, NO);
         CGEventPost(kCGHIDEventTap, keyUp);
         CFRelease(keyUp);
@@ -65,10 +65,10 @@
 
 - (void)untrigger {
 	NSLog(@"untrig");
-    [NJOutputKeyPress untrigger:_firstKeyCode];
-    [NJOutputKeyPress untrigger:_secondKeyCode];
-    [NJOutputKeyPress untrigger:_thirdKeyCode];
     [NJOutputKeyPress untrigger:_fourthKeyCode];
+    [NJOutputKeyPress untrigger:_thirdKeyCode];
+    [NJOutputKeyPress untrigger:_secondKeyCode];
+    [NJOutputKeyPress untrigger:_firstKeyCode];
 }
 
 @end

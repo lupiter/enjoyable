@@ -6,6 +6,7 @@
 //
 
 #import "NJOutputMouseScroll.h"
+#import <CoreGraphics/CoreGraphics.h>
 
 @implementation NJOutputMouseScroll
 

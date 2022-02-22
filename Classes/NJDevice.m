@@ -54,11 +54,11 @@ static NSArray *InputsForElement(IOHIDDeviceRef device, id parent) {
                                                      index:++buttons
                                                     parent:parent];
         } else {
-			input = [[NJInputButton alloc] initWithElement:element
-													 index:++buttons
-													parent:parent];
+//			input = [[NJInputButton alloc] initWithElement:element
+//													 index:++buttons
+//													parent:parent];
             NSLog(@"un-handled input %d", usage);
-//            continue;
+            continue;
         }
         
         [children addObject:input];

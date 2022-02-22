@@ -7,6 +7,7 @@
 //
 
 #import "NJOutput.h"
+#import <CoreGraphics/CoreGraphics.h>
 
 @interface NJOutputKeyPress : NJOutput
 

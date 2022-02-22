@@ -54,8 +54,14 @@ typedef NS_ENUM(NSUInteger, NJOutputRow) {
     NSInteger row = self.radioButtons.selectedRow;
     
     if (row != NJOutputRowKey) {
-        self.keyInput.keyCode = NJKeyInputFieldEmpty;
-        [self.keyInput resignIfFirstResponder];
+        self.firstKeyInput.keyCode = NJKeyInputFieldEmpty;
+        self.secondKeyInput.keyCode = NJKeyInputFieldEmpty;
+        self.thirdKeyInput.keyCode = NJKeyInputFieldEmpty;
+        self.fourthKeyInput.keyCode = NJKeyInputFieldEmpty;
+        [self.firstKeyInput resignIfFirstResponder];
+        [self.secondKeyInput resignIfFirstResponder];
+        [self.thirdKeyInput resignIfFirstResponder];
+        [self.fourthKeyInput resignIfFirstResponder];
     }
     
     if (row != NJOutputRowSwitch) {
@@ -100,7 +106,7 @@ typedef NS_ENUM(NSUInteger, NJOutputRow) {
 - (IBAction)outputTypeChanged:(NSView *)sender {
     [sender.window makeFirstResponder:sender];
     if (self.radioButtons.selectedRow == 1)
-        [self.keyInput.window makeFirstResponder:self.keyInput];
+        [self.firstKeyInput.window makeFirstResponder:self.firstKeyInput];
     [self commit];
 }
 
