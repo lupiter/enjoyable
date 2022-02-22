@@ -144,7 +144,7 @@ static CVReturn _updateDL(CVDisplayLinkRef displayLink,
         return;
     
     NSLog(@"input controller %@", handler.name);
-//    [self.delegate inputController:self didInput:handler];
+    [self.delegate inputController:self didInput:handler];
 }
 
 - (void)HIDManager:(NJHIDManager *)manager valueChanged:(IOHIDValueRef)value {

@@ -6,6 +6,7 @@
 //
 
 #import "NJOutputKeyPress.h"
+#include <Carbon/Carbon.h>
 
 #import "NJKeyInputField.h"
 
@@ -39,36 +40,83 @@
 	NSLog(@"trig");
     if (![self empty]) {
 		NSLog(@"not empty");
-        [NJOutputKeyPress trigger:_firstKeyCode];
-        [NJOutputKeyPress trigger:_secondKeyCode];
-        [NJOutputKeyPress trigger:_thirdKeyCode];
-        [NJOutputKeyPress trigger:_fourthKeyCode];
+        [self trigger:_firstKeyCode];
+        [self trigger:_secondKeyCode];
+        [self trigger:_thirdKeyCode];
+        [self trigger:_fourthKeyCode];
     }
 }
 
-+ (void) trigger:(CGKeyCode )key {
+- (void) trigger:(CGKeyCode )key {
     if (key != NJKeyInputFieldEmpty && key != 0) {
-        CGEventRef keyDown = CGEventCreateKeyboardEvent(NULL, key, YES);
-        CGEventPost(kCGHIDEventTap, keyDown);
-        NSLog(@"event keydown sent %d", key);
-        CFRelease(keyDown);
+        switch (key) {
+            case kVK_Shift:
+            case kVK_RightShift:
+                _flags = _flags | kCGEventFlagMaskShift;
+                break;
+            case kVK_Command:
+            case kVK_RightCommand:
+                _flags = _flags | kCGEventFlagMaskCommand;
+                break;
+            case kVK_Control:
+            case kVK_RightControl:
+                _flags = _flags | kCGEventFlagMaskControl;
+                break;
+            case kVK_Option:
+            case kVK_RightOption:
+                _flags = _flags | kCGEventFlagMaskAlternate;
+                break;
+            case kVK_CapsLock:
+                _flags = _flags | kCGEventFlagMaskAlphaShift;
+                break;
+            case kVK_Help:
+                _flags = _flags | kCGEventFlagMaskHelp;
+                break;
+            case kVK_Function:
+                _flags = _flags | kCGEventFlagMaskSecondaryFn;
+                break;
+            default:
+                NSLog(@"event keydown sent %d %llu", key, _flags);
+                CGEventRef keyDown = CGEventCreateKeyboardEvent(NULL, key, YES);
+                CGEventSetFlags(keyDown, self.flags);
+                CGEventPost(kCGHIDEventTap, keyDown);
+                CFRelease(keyDown);
+                break;
+        }
     }
 }
 
-+ (void) untrigger:(CGKeyCode )key {
-    if (key != NJKeyInputFieldEmpty && key != 0) {
+- (void) untrigger:(CGKeyCode )key {
+    if (
+        key != NJKeyInputFieldEmpty &&
+        key != 0 &&
+        key != kVK_Shift &&
+        key != kVK_RightShift &&
+        key != kVK_Command &&
+        key != kVK_RightCommand &&
+        key != kVK_Control &&
+        key != kVK_RightControl &&
+        key != kVK_Option &&
+        key != kVK_RightOption &&
+        key != kVK_CapsLock &&
+        key != kVK_Help &&
+        key != kVK_Function
+        ) {
         CGEventRef keyUp = CGEventCreateKeyboardEvent(NULL, key, NO);
+        CGEventSetFlags(keyUp, self.flags);
         CGEventPost(kCGHIDEventTap, keyUp);
+        NSLog(@"event keyup sent %d", key);
         CFRelease(keyUp);
     }
 }
 
 - (void)untrigger {
 	NSLog(@"untrig");
-    [NJOutputKeyPress untrigger:_fourthKeyCode];
-    [NJOutputKeyPress untrigger:_thirdKeyCode];
-    [NJOutputKeyPress untrigger:_secondKeyCode];
-    [NJOutputKeyPress untrigger:_firstKeyCode];
+    [self untrigger:_fourthKeyCode];
+    [self untrigger:_thirdKeyCode];
+    [self untrigger:_secondKeyCode];
+    [self untrigger:_firstKeyCode];
+    self.flags = 0;
 }
 
 @end

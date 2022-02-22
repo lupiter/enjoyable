@@ -40,6 +40,7 @@
         name:NJEventSimulationStopped
         object:nil];
 
+    [self checkAccess];
     [self.ic load];
     [self.mvc.mappingList reloadData];
     [self.mvc changedActiveMappingToIndex:
@@ -51,6 +52,15 @@
     statusItem.button.highlighted = YES;
     statusItem.menu = self.statusItemMenu;
     statusItem.button.target = self;
+}
+
+- (void)checkAccess {
+    NSDictionary* options = @{(__bridge id)(kAXTrustedCheckOptionPrompt): @NO};
+    Boolean hasAccess = AXIsProcessTrustedWithOptions((CFDictionaryRef)(options));
+    if (!hasAccess) {
+        NSDictionary* options = @{(__bridge id)(kAXTrustedCheckOptionPrompt): @YES};
+        AXIsProcessTrustedWithOptions((CFDictionaryRef)(options));
+    }
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
